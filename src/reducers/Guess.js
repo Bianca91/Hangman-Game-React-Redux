@@ -1,4 +1,5 @@
 import { GUESS } from '../Actions/types'
+import { showGuess } from '../lib/game'
 
 const guessingWords = [
   ["Welcome"],
@@ -7,6 +8,12 @@ const guessingWords = [
 
 ]
 
-export default function(state = guessingWords, action = {}) {
-  return state
+export default (state = guessingWords, { type } = {}) => {
+  switch (type) {
+    case GUESS :
+      return [].concat(showGuess.guess)
+
+      default :
+    return state
+}
 }

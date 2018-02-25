@@ -1,10 +1,10 @@
 import { GUESS } from './types'
-//import { fillWord } from '../lib/game'
+import { showGuess } from '../lib/game'
 
-export const GUESS = (initialState = [] ) => {
-}
+export const nextGuess = ( guessWords = " ") => {
+  const [guess] = showGuess()
   return {
-    type: GUESS,
+    type: GUESS
 
-
+    }
   }
