@@ -8,16 +8,11 @@ function wrongGuessCount(word, guesses) {
   console.log(total);
 }
 
-function showGuess(word, guesses) {
-  let splitWord = word.split("");
-  let joinGuesses = guesses.join("");
-
-  for (let i = 0; i < splitWord.length; i++) {
-    if (joinGuesses.indexOf(splitWord[i]) === -1) {
-      splitWord[i] = "_";
-    }
-  }
-  return splitWord.join(" ");
+export function showGuess(words, guesses) {
+  return words
+    .split("")
+    .map(char => (guesses.includes(char) ? char : "_"))
+    .joint(" ");
 }
 
 function isWinner(word, guesses) {
