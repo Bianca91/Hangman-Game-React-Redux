@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+.Guesses {
+  background-color: #e8cef9;
+}
+.Guesses h1 {
+  position: relative;
+  top: -20px;
+  font-family: "Roboto";
+  background-color: #e8eaf6;
+}
+
+/* .Guesses {
+	position: relative;
+	background-color: ;
+	border-top-left-radius:42px;
+	border-top-right-radius:42px;
+	border: none;
+	text-indent:-5.24px;
+	display:inline-block;
+	color:#fff;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:85px;
+	line-height:85px;
+	width:85px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #444;
+	transition: 0.2s;
+} */
+
+form {
+  position: static;
+  text-align: center;
+  width: 100%;
+  list-style-type: none;
+  background-color: #e5def9;
+}
+
+label {
+  cursor: default;
+  background-color: #e5def9;
+}
+
+/* .updateGuess {
+  flex: 1;
+  border: 1px solid #ccc;
+  font-size: 150%;
+  margin: 12px;
+  cursor: pointer;
+  max-width: 50px;
+} */
+
+label:hover {
+  background-color: #eee;
+}

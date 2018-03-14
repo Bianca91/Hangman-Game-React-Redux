@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
-
-
-/* .App-title {
-  font-size: 1.5em;
-} */
-
-.App h1 {
-  text-align: center;
+.App {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
-body {
-  font-family: 'Orbitron', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+.App h1 {
+  flex: 1;
+  text-align: center;
 }

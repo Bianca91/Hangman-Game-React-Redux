@@ -1,5 +1,5 @@
-import Guess from '../reducers/Guess.js'
+import guessLetters from './guessLetters'
 
 export default {
-  Guess
+    guessLetters,
 }
