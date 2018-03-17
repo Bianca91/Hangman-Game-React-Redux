@@ -1,28 +1,29 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { words } from "../lib/words"
-
+import { words } from "../lib/words";
 
 const word = words[Math.floor(Math.random() * words.length)];
 
 class HangMan extends PureComponent {
   static propTypes = {
-    words: PropTypes.arrayOf(
+    word: PropTypes.arrayOf(
       PropTypes.shape({
         guessLetters: PropTypes.string.isRequired
       })
-    )
+    ),
+  //  wrongGuessCount: PropTypes.func.isRequired
   };
 
   // wrongGuessCount(word, guesses) {
   //   var total = 0;
   //   for (let i = 0; i < guesses.length; i++) {
-  //     if (word.indexOf(guesses[i]) === -1) {
+  //     if (words.indexOf(guesses[i]) === -1) {
   //       total += 1;
   //     }
   //   }
   //   console.log(total);
+  //   return wrongGuessCount;
   // }
 
   // isWinner(word, guesses) {
@@ -33,14 +34,14 @@ class HangMan extends PureComponent {
   //   }
   // }
   render() {
-    console.log(word);
-
     const { guessLetters } = this.props;
-
+    console.log(word)
+    console.log(guessLetters)
     return (
       <div className="Game">
         <p>
-          {word.toLowerCase()
+          {word
+            .toLowerCase()
             .split("")
             .map(char => (guessLetters.includes(char) ? char : "_"))}
         </p>

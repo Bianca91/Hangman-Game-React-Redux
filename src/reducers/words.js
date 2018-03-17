@@ -1,11 +1,10 @@
 import { GET_GUESS } from "../actions/types";
+import { words } from "../lib/words";
 
-const words = ["Hello"];
-
-export default (state = words, payload) => {
-  switch (payload.type) {
+export default (state = words, action) => {
+  switch (action.type) {
     case GET_GUESS:
-      return words;
+      return state.concat(action.payload);
 
     default:
       return state;

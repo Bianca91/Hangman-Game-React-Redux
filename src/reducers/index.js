@@ -1,7 +1,7 @@
-import guessLetters from './guessLetters'
-import words from './words'
+import guessLetters from "./guessLetters";
+import words from "./words";
 
 export default {
-    guessLetters,
-    words
-}
+  guessLetters,
+  words
+};
