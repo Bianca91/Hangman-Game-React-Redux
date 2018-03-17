@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import { updateGuess } from "../actions/game";
 import { connect } from "react-redux";
 import "./Guesses.css";
-//import uuidv1 from "uuid";
 
 class Guesses extends PureComponent {
   constructor() {
@@ -14,12 +13,13 @@ class Guesses extends PureComponent {
   }
 
   handleChange(event) {
-    this.setState({guess: event.target.value });
+    this.setState({ guess: event.target.value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.updateGuess(this.state.guess.split(''));
+    this.props.updateGuess(this.state.guess.split(""));
+    this.setState({ guess: "" });
   }
 
   render() {
@@ -35,6 +35,7 @@ class Guesses extends PureComponent {
             type="text"
             placeholder="Guess"
             id="guessLetter"
+            value={this.state.guess}
             onChange={this.handleChange}
             class="validate"
           />
@@ -44,4 +45,5 @@ class Guesses extends PureComponent {
     );
   }
 }
+
 export default connect(null, { updateGuess })(Guesses);
