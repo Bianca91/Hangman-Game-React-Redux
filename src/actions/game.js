@@ -6,7 +6,7 @@ export const updateGuess = (guessLetter) => ({
   payload: guessLetter
 });
 
-export const getGuess = words => ({
+export const getGuess = word => ({
   type: "GET_GUESS",
-  payload: words
+  payload: word
 });

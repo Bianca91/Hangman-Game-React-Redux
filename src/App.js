@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Guesses from "./components/Guesses";
 import HangMan from "./components/HangMan";
-import Finish from "./container/Finish"
+
 
 class App extends Component {
   render() {
@@ -10,7 +10,6 @@ class App extends Component {
       <div className="App">
         <Guesses />
         <HangMan />
-        <Finish />
       </div>
     );
   }

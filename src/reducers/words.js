@@ -4,7 +4,7 @@ import { words } from "../lib/words";
 export default (state = words, action) => {
   switch (action.type) {
     case GET_GUESS:
-      return state.concat(action.payload);
+      return state.payload;
 
     default:
       return state;

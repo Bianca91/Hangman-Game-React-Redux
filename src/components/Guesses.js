@@ -28,19 +28,17 @@ class Guesses extends PureComponent {
       <form onKeyUp={this.handleSubmit}>
         <h1 class="center-align">HangMan </h1>
         <h3 class="center-align">Type in your guess: </h3>
-        <div class="input-field col s6">
-          <label htmlFor="guessLetter" />
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Guess"
-            id="guessLetter"
-            value={this.state.guess}
-            onChange={this.handleChange}
-            class="validate"
-          />
-          <label for="guessLetter" />
-        </div>
+
+        <label htmlFor="guessLetter" />
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Guess"
+          value={this.state.guess}
+          onChange={this.handleChange}
+          class="validate"
+        />
+        <label for="guessLetter" />
       </form>
     );
   }

@@ -1,7 +1,5 @@
 export const words = [
-  "JavaScript",
-  "Python",
-  "Ruby",
-  "Java",
-  "Cplus"
+  "javascript",
+  "python",
+  "react"
 ]
