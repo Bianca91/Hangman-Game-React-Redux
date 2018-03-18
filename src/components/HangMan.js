@@ -12,19 +12,18 @@ class HangMan extends PureComponent {
         guessLetters: PropTypes.string.isRequired
       })
     ),
-  //  wrongGuessCount: PropTypes.func.isRequired
+    wrongGuessCount: PropTypes.number.isRequired
   };
 
-  // wrongGuessCount(word, guesses) {
-  //   var total = 0;
-  //   for (let i = 0; i < guesses.length; i++) {
-  //     if (words.indexOf(guesses[i]) === -1) {
-  //       total += 1;
-  //     }
-  //   }
-  //   console.log(total);
-  //   return wrongGuessCount;
-  // }
+  wrongGuessCount = (word, guessLetters) => {
+    var total = 0;
+    for (let i = 0; i < word.length; i++) {
+      if (word.indexOf(this.props.guessLetters[i]) === -1) {
+        total += 1;
+      }
+    }
+    return total;
+  };
 
   // isWinner(word, guesses) {
   //   const showGuess = this.props;
@@ -34,9 +33,11 @@ class HangMan extends PureComponent {
   //   }
   // }
   render() {
-    const { guessLetters } = this.props;
-    console.log(word)
-    console.log(guessLetters)
+    const { guessLetters, wrongGuessCount } = this.props;
+    console.log(word);
+    console.log(guessLetters);
+    console.log(wrongGuessCount);
+    if (this.props.wrongGuessCount >= 6) return null;
     return (
       <div className="Game">
         <p>
