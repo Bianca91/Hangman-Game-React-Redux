@@ -6,8 +6,9 @@ export default (state = [], action) => {
     case UPDATE_GUESS:
       return state.concat(action.payload);
     case NEW_GAME:
-      return [].concat(action.payload)
+      return []
     default:
       return state;
+
   }
 };

@@ -1,0 +1,11 @@
+.CreateGameButton {
+  background-color: #d0021b;
+  border: 1px solid #9e0215;
+  border-radius: 3px;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.CreateGameButton:hover {
+  background-color: #9e0215;
+}

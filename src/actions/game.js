@@ -1,17 +1,12 @@
-import { UPDATE_GUESS } from "./types";
-import { GET_GUESS } from "./types";
-import { NEW_GAME } from "./types"
+import { NEW_GAME, UPDATE_GUESS, GET_GUESS } from "./types"
+import {words}  from "../lib/words"
 
 export const updateGuess = (guessLetter) => ({
-  type: "UPDATE_GUESS",
+  type: UPDATE_GUESS,
   payload: guessLetter
 });
 
-export const getGuess = word => ({
-  type: "GET_GUESS",
-  payload: word
-});
-
 export const createGame = () => ({
-  type: NEW_GAME
+  type: NEW_GAME,
+  payload: words[Math.floor(Math.random() * words.length)]
 })

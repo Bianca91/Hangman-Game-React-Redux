@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import { CreateGameButton } from './CreateGameButton'
+import './CreateGameButton.css'
 
 describe('<CreateGameButton />', () => {
   const createGame = sinon.spy()

@@ -1,5 +1,7 @@
 export const words = [
-  "javascript",
-  "python",
-  "react"
+  "React",
+  "Redux",
+  "Javascript",
+  "Typescript",
+  "Enzyme"
 ]

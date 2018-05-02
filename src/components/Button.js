@@ -10,12 +10,12 @@ export class CreateGameButton extends PureComponent {
   };
 
   handleClick = () => {
-    this.props.createGame(6);
+    this.props.createGame();
   };
 
   render() {
     return (
-      <button onClick={this.handleClick} className="CreateGameButton">
+      <button style={{margin: 10}} onClick={this.handleClick} className="CreateGameButton">
         {this.props.label || "New Game"}
       </button>
     );
