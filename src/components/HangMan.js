@@ -22,6 +22,8 @@ class HangMan extends PureComponent {
       guessCount.push(this.props.guessLetters[i]);
     }
 
+    if (word==='') return null
+
     const showGuessWord = word
       .toLowerCase()
       .split("")

@@ -1,4 +1,4 @@
-import { NEW_GAME, UPDATE_GUESS, GET_GUESS } from "./types"
+import { NEW_GAME, UPDATE_GUESS } from "./types"
 import {words}  from "../lib/words"
 
 export const updateGuess = (guessLetter) => ({
