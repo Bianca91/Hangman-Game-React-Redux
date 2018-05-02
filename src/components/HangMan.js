@@ -35,6 +35,7 @@ class HangMan extends PureComponent {
           <p>Guesses: {guessCount}</p>
         </div>
       );
+
     let guessWord = showGuessWord.join("");
     console.log(showGuessWord);
     console.log(guessWord);
