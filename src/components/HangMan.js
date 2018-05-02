@@ -1,9 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { words } from "../lib/words";
-
-const word = words[Math.floor(Math.random() * words.length)];
 
 class HangMan extends PureComponent {
   static propTypes = {
@@ -11,22 +8,16 @@ class HangMan extends PureComponent {
       PropTypes.shape({
         guessLetters: PropTypes.string.isRequired
       })
-    ),
-    hangImg: PropTypes.string.isRequired
+    )
   };
 
   render() {
-    const { guessLetters } = this.props;
+    const { guessLetters, word } = this.props;
     const wrongGuessCount = guessLetters.filter(
       guess => word.indexOf(guess) === -1
     ).length;
 
-    console.log(guessLetters);
-
-    console.log(wrongGuessCount);
-
     var guessCount = [];
-    console.log(guessCount);
     for (var i = 0; i < this.props.guessLetters.length; i++) {
       guessCount.push(this.props.guessLetters[i]);
     }
@@ -34,15 +25,24 @@ class HangMan extends PureComponent {
     const showGuessWord = word
       .toLowerCase()
       .split("")
-      .map(char => (guessLetters.includes(char) ? char : "_"));
+      .map(char => (guessLetters.includes(char) ? char : " _ "));
 
-    while (guessCount.length < 8)
+    const guessWord = showGuessWord.join("");
+    console.log(guessWord);
+    console.log(wrongGuessCount);
+    console.log(word);
+
+    if (wrongGuessCount < 6) {
+      if (guessWord.toLowerCase() === word.toLowerCase())
+        return <p> You won!! </p>
       return (
         <div className="Game">
           <div>
-            <p>{showGuessWord}</p>
+            <p> {`Guess ${showGuessWord.length} letters`}</p>
+            <p>{showGuessWord.map(x => x.toUpperCase())}</p>
             <p>Guesses: {guessCount}</p>
             <img
+              alt=""
               style={{ height: 100 }}
               src={(() => {
                 switch (wrongGuessCount) {
@@ -59,24 +59,33 @@ class HangMan extends PureComponent {
                   case 6:
                     return "http://dinder.de/images/hangman/6.png";
                   case 7:
-                    return "http://dinder.de/images/hangman/7.png"
+                    return "http://dinder.de/images/hangman/7.png";
+                  default:
+                    return "";
                 }
               })()}
             />
           </div>
         </div>
       );
+    }
 
-    let guessWord = showGuessWord.join("");
-
-    if (guessWord === word) return <p> You won!! </p>;
-    else return <img alt={"You lost!!!"} style={{height: 150}} src="http://dinder.de/images/hangman/7.png" />
-
+    return (
+      <div className="lost">
+        <p> You lost!!! </p>
+        <p> {`The word was ${word}`} </p>
+        <img alt="Oeps"
+          style={{ height: 150 }}
+          src="http://dinder.de/images/hangman/7.png"
+        />
+      </div>
+    );
   }
 }
 const mapStateToProps = function(state) {
   return {
-    guessLetters: state.guessLetters
+    guessLetters: state.guessLetters,
+    word: state.word
   };
 };
 

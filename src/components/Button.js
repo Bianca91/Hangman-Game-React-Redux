@@ -10,7 +10,7 @@ export class CreateGameButton extends PureComponent {
   };
 
   handleClick = () => {
-    this.props.createGame(6);
+    this.props.createGame();
   };
 
   render() {
