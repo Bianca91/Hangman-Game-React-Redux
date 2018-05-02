@@ -27,9 +27,7 @@ class Guesses extends PureComponent {
     console.log(this.state);
     return (
       <form onKeyUp={this.handleSubmit}>
-        <h1 class="center-align">HangMan </h1>
         <h3 class="center-align">Type in your guess: </h3>
-
         <label htmlFor="guessLetter" />
         <input
           className="form-control"
